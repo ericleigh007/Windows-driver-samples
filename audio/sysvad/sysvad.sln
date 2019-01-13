@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhoneAudioSample", "PhoneAu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TabletAudioSample", "TabletAudioSample", "{C06F6070-75EE-4F57-8D35-4AC2AB08D029}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "package", "package\package.VcxProj", "{830B14D5-0E32-4F9E-AEFA-4C9F6FC13C2A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "package", "Package\package.VcxProj", "{830B14D5-0E32-4F9E-AEFA-4C9F6FC13C2A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KeywordDetectorContosoAdapter", "KeywordDetectorAdapter\KeywordDetectorContosoAdapter.vcxproj", "{E0F02048-78A4-4FE8-B863-66E6CB6A2C37}"
 EndProject
