@@ -1,3 +1,15 @@
+---
+page_type: sample
+description: "Toaster samples from the WinHEC 2017 Lab: Toaster Driver, PlugInToaster, and Toaster Support App."
+languages:
+- cpp
+products:
+- windows
+- windows-wdk
+---
+
+
+
 <!---
     name: WinHEC 2017 Lab
     platform: KMDF
@@ -9,3 +21,4 @@
 
 # WinHEC 2017 Lab
 
+Toaster samples from the WinHEC 2017 Lab: Toaster Driver, PlugInToaster, and Toaster Support App.

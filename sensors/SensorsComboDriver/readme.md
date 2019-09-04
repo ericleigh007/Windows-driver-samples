@@ -1,3 +1,13 @@
+---
+page_type: sample
+description: "Demonstrates how to write UMDF v2 drivers to control various types of virtual sensors."
+languages:
+- cpp
+products:
+- windows
+- windows-wdk
+---
+
 <!---
     name: Sensors Combo Driver Sample
     platform: UMDF2
@@ -9,4 +19,4 @@
 
 # Sensors Combo Driver Sample
 
-The sensors combo driver sensor sample shows how to write UMDF v2 drivers to control various types of virtual sensors such as Ambient Light, Barometer, Gyroscope, Magnetometer, Geomagnetic, Gravity Vector, Proximity, Linear Accelerometer and Relative Fusion.
+The sensors combo driver sensor sample shows how to write UMDF v2 drivers to control various types of virtual sensors such as ambient light, barometer, gyroscope, magnetometer, geomagnetic, gravity vector, proximity, linear accelerometer and relative fusion.

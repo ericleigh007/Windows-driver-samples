@@ -1,3 +1,14 @@
+---
+page_type: sample
+description: "A file system driver based on the Windows inbox FastFAT file system used as a model for new file systems."
+languages:
+- cpp
+products:
+- windows
+- windows-wdk
+---
+
+
 <!---
     name: fastfat File System Driver
     platform: WDM
@@ -7,16 +18,14 @@
     samplefwlink: http://go.microsoft.com/fwlink/p/?LinkId=620305
 --->
 
-
-
-fastfat File System Driver
-==========================
+# fastfat File System Driver
 
 The *fastfat* sample is file system driver that you can use as a model to write new file systems.
 
 *fastfat* is a complete file system that addresses various issues such as storing data on disk, interacting with the cache manager, and handling various I/O operations such as file creation, performing read/writes on a file, setting information on a file, and performing control operations on the file system.
 
 ## Universal Windows Driver Compliant
+
 This sample builds a Universal Windows Driver. It uses only APIs and DDIs that are included in OneCoreUAP.
 
 Build the sample
@@ -46,7 +55,9 @@ You can build a driver from the command line using the Visual Studio Command Pro
 1.  Open a Visual Studio Command Prompt window at the **Start** screen. From this window you can use MsBuild.exe to build any Visual Studio project by specifying the project (.VcxProj) or solutions (.Sln) file.
 2.  Navigate to the project directory and enter the **MSbuild** command for your target. For example, to perform a clean build of a Visual Studio driver project called *filtername*.vcxproj, navigate to the project directory and enter the following MSBuild command: 
 
-    **msbuild /t:clean /t:build .\\fastfat.vcxproj**.
+```bash
+msbuild /t:clean /t:build .\\fastfat.vcxproj
+```
 
 Installation
 ------------

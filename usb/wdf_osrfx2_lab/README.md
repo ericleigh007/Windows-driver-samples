@@ -1,3 +1,15 @@
+---
+page_type: sample
+description: "Contains a console test application and a series of iterative drivers for both KMDF and UMDF version 1."
+languages:
+- cpp
+products:
+- windows
+- windows-wdk
+---
+
+
+
 <!---
     name: WDF Sample Driver Learning Lab for OSR USB-FX2
     platform: UMDF1 KMDF
@@ -7,9 +19,7 @@
     samplefwlink: https://go.microsoft.com/fwlink/?linkid=856746
 --->
 
-
-WDF Sample Driver Learning Lab for OSR USB-FX2
-==============================================
+# WDF Sample Driver Learning Lab for OSR USB-FX2
 
 The wdf\_osrfx2\_lab sample contains a console test application and a series of iterative drivers for both Kernel-Mode Driver Framework (KMDF) and User-Mode Driver Framework (UMDF) version 1.
 
@@ -376,5 +386,3 @@ The most basic step. The source file contains a minimal amount of code to get th
 </tr>
 </tbody>
 </table>
-
-

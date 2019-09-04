@@ -1,3 +1,14 @@
+---
+page_type: sample
+description: "The Microsoft SysVAD Virtual Audio Device Driver (SYSVAD) shows how to develop a WDM audio driver that exposes support for multiple audio devices."
+languages:
+- cpp
+products:
+- windows
+- windows-wdk
+urlFragment: sysvad-virtual-audio-device-driver-sample
+---
+
 <!---
     name: SysVAD Virtual Audio Device Driver Sample
     platform: WDM
@@ -7,8 +18,7 @@
     samplefwlink: http://go.microsoft.com/fwlink/p/?LinkId=620183
 --->
 
-SysVAD Virtual Audio Device Driver Sample
-========================================
+# SysVAD Virtual Audio Device Driver Sample
 
 The Microsoft SysVAD Virtual Audio Device Driver (SYSVAD) shows how to develop a WDM audio driver that exposes support for multiple audio devices.
 
@@ -27,14 +37,14 @@ Directory | Description
 TabletAudioSample | Endpoints that are present in TabletAudioSample driver.
 PhoneAudioSample | Endpoints that are present in PhoneAudioSample driver.
 EndpointsCommon | Endpoints that are present in both TabletAudioSample and PhoneAudioSample. It also contains other common code shared by both sample drivers.
-SwapAPO | Sample APO.
+SwapAPO | Sample APO that installs onto endpoints exposed by the SysVAD sample driver and swaps the left and right channels.
+DelayAPO | Sample APO that adds a delay to the input samples.
+KwsAPO | Sample APO that uses KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION to determine if the keyword spotter pin is interleaving loopback audio with the microphone audio and identify which channels contain loopback audio. If it is interleaved the APO will strip out the loopback audio and deliver only the microphone audio upstream. Because channel data is removed, the APO negotiates an output format which is different than the input format.
 KeywordDetectorAdapter | Sample Keyword Detector Adapter.
 
 For more information about the Windows audio engine, see [Exposing Hardware-Offloaded Audio Processing in Windows](http://msdn.microsoft.com/en-us/windows/hardware/br259116), and note that audio hardware that is offload-capable replicates the architecture that is presented in the diagram shown in the topic.
 
-
-Build the sample
-----------------
+## Build the sample
 
 If you simply want to Build this sample driver and don't intend to run or test it, then you do not need a target computer (also called a test computer). If, however, you would like to deploy, run and test this sample driver, then you need a second computer that will server as your target computer. Instructions are provided in the **Run the sample** section to show you how to set up the target computer - also referred to as *provisioning* a target computer.
 
@@ -44,11 +54,11 @@ Perform the following steps to build this sample driver.
 
 In Microsoft Visual Studio, Click **File** \> **Open** \> **Project/Solution...** and navigate to the folder that contains the sample files (for example, *C:\Windows-driver-samples\audio\sysvad*). Double-click the *sysvad* solution file.
 
-In Visual Studio locate the Solution Explorer. (If this is not already open, choose **Solution Explorer** from the **View** menu.) In Solution Explorer, you can see one solution that has four projects.
+In Visual Studio locate the Solution Explorer. (If this is not already open, choose **Solution Explorer** from the **View** menu.) In Solution Explorer, you can see one solution that has eight projects.
 
 **2. Set the sample's configuration and platform**
 
-In Solution Explorer, right-click **Solution 'sysvad' (4 projects)**, and choose **Configuration Manager**. Make sure that the configuration and platform settings are the same for the four projects. By default, the configuration is set to **Debug**, and the platform is set to **Win32** for all the projects. If you make any configuration and/or platform changes for one project, you must make the same changes for the remaining three projects.
+In Solution Explorer, right-click **Solution 'sysvad' (8 projects)**, and choose **Configuration Manager**. Make sure that the configuration and platform settings are the same for the eight projects. By default, the configuration is set to **Debug**, and the platform is set to **Win32** for all the projects. If you make any configuration and/or platform changes for one project, you must make the same changes for the remaining three projects.
 
 **3. Build the sample using Visual Studio**
 
@@ -65,15 +75,15 @@ The package should contain these files:
 File | Description 
 -----|------------
 TabletAudioSample.sys OR PhoneAudioSample.sys| The driver file.
-SwapAPO.dll | A sample APO. 
-DelayAPO.dll | A sample APO. 
+SwapAPO.dll | The swap APO.
+DelayAPO.dll | The delay APO. 
+KWSApo.dll | The KWS APO.
 sysvad.cat | A signed catalog file, which serves as the signature for the entire package. 
 TabletAudioSample.inf | An information (INF) file that contains information needed to install the driver. 
 PhoneAudioSample.inf | An information (INF) file that contains information needed to install the driver.
 KeywordDetectorContosoAdapter.dll | Sample Keyword detector adapter.
 
-Run the sample
---------------
+## Run the sample
 
 The computer where you install the driver is called the *target computer* or the *test computer*. Typically this is a separate computer from the computer on which you develop and build the driver package. The computer where you develop and build the driver is called the *host computer*.
 
@@ -131,7 +141,7 @@ Create a folder on the target for the built driver package (for example, *C:\\Sy
 
 Create a folder on the target computer for the certificate created by the build process. For example, you could create a folder named *C:\\Certificates* on the target computer, and then copy *package.cer* to it from the host computer. You can find this certificate in the same folder on the host computer, as the *package* folder that contains the built driver files. On the target computer, right-click the certificate file, and click **Install**, then follow the prompts to install the test certificate.
 
-If you need more detailed instructions for setting up the target computer, see [Preparing a Computer for Manual Driver Deployment](http://msdn.microsoft.com/en-us/library/windows/hardware/dn265571(v=vs.85).aspx).
+If you need more detailed instructions for setting up the target computer, see [Preparing a Computer for Manual Driver Deployment](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/preparing-a-computer-for-manual-driver-deployment).
 
 **2. Install the driver**
 

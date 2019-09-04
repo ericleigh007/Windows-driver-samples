@@ -1,3 +1,15 @@
+---
+page_type: sample
+description: "Demonstrates how to use KMDF to perform bulk and interrupt data transfers to a USB device."
+languages:
+- cpp
+products:
+- windows
+- windows-wdk
+---
+
+
+
 <!---
     name: Sample KMDF Function Driver for OSR USB-FX2
     platform: KMDF
@@ -7,9 +19,7 @@
     samplefwlink: http://go.microsoft.com/fwlink/p/?LinkId=620313
 --->
 
-
-Sample KMDF Function Driver for OSR USB-FX2
-===========================================
+# Sample KMDF Function Driver for OSR USB-FX2
 
 The kmdf\_fx2 sample is a Kernel-Mode Driver Framework (KMDF) driver for the OSR USB-FX2 device. It includes a test app and sample device metadata.
 
@@ -18,6 +28,7 @@ In the Windows Driver Kit (WDK), the osrusbfx2 sample demonstrated how to perfor
 The specification for the device is at <http://www.osronline.com/hardware/OSRFX2_32.pdf>. The driver and sample device metadata also work with the [Custom driver access](http://go.microsoft.com/fwlink/p/?LinkID=248288) sample.
 
 ## Universal Windows Driver Compliant
+
 This sample builds a Universal Windows Driver. It uses only APIs and DDIs that are included in OneCoreUAP.
 
 Overview
@@ -375,5 +386,3 @@ To trace, you can use the in-box tools, logman and tracerpt, or download XPerf (
 4.  View the trace file using Xperf:
 
     `xperfview OSRUSBFX2.etl`
-
-
